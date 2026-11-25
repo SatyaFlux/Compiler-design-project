@@ -1,0 +1,12 @@
+{
+  "name": "cfg-experimenter-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root launcher for CFG Experimenter",
+  "scripts": {
+    "dev": "node CFG-Experimenter/start-dev.mjs",
+    "start": "node CFG-Experimenter/start-dev.mjs",
+    "build": "npm --prefix CFG-Experimenter/frontend run build",
+    "test": "CFG-Experimenter\\backend\\.venv\\Scripts\\pytest.exe CFG-Experimenter\\backend\\tests -v"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "cfg-experimenter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CFG Experimenter - Interactive Compiler Design Teaching Simulator",
+  "scripts": {
+    "dev": "node start-dev.mjs",
+    "start": "node start-dev.mjs",
+    "build": "npm --prefix frontend run build",
+    "test": "backend\\.venv\\Scripts\\pytest.exe backend\\tests -v"
+  }
+}
