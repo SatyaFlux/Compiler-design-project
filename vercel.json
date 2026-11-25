@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm --prefix CFG-Experimenter/frontend install",
+  "buildCommand": "npm --prefix CFG-Experimenter/frontend run build",
+  "outputDirectory": "CFG-Experimenter/frontend/dist",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "CFG-Experimenter/backend/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

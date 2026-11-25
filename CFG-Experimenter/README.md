@@ -43,3 +43,11 @@ Frontend runs at `http://localhost:5173` (proxying `/api` to Flask).
 cd CFG-Experimenter/backend
 .\.venv\Scripts\pytest.exe tests -v
 ```
+
+### 4. Deploy on Vercel (One-Click Full-Stack)
+This repository is pre-configured with `vercel.json`, `requirements.txt`, and `api/index.py` at the repository root:
+1. Go to [vercel.com](https://vercel.com) and click **Add New → Project**.
+2. Import your GitHub repository (`Compiler-design-project`).
+3. Leave the **Root Directory** as `.` (default) — Vercel automatically detects `vercel.json` to build `CFG-Experimenter/frontend` and deploy the Flask API at `/api/*`.
+4. Click **Deploy**.
+

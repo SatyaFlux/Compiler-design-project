@@ -1,0 +1,9 @@
+.git
+.venv
+CFG-Experimenter/backend/.venv
+node_modules
+CFG-Experimenter/frontend/node_modules
+__pycache__
+.pytest_cache
+*.db
+*.sqlite3

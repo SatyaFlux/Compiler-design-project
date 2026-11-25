@@ -1,10 +1,20 @@
 """
 SQLite database connection and schema management.
 """
+import os
 import sqlite3
+import tempfile
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parent / "cfg_experimenter.db"
+
+def _resolve_db_path() -> Path:
+    local_dir = Path(__file__).resolve().parent
+    if os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME") or not os.access(local_dir, os.W_OK):
+        return Path(tempfile.gettempdir()) / "cfg_experimenter.db"
+    return local_dir / "cfg_experimenter.db"
+
+
+DB_PATH = _resolve_db_path()
 
 
 def get_connection(db_path: Path = DB_PATH) -> sqlite3.Connection:
